@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const Webpack = require('webpack');
 const OptimizeCCSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin= require('copy-webpack-plugin');
 
 
 
@@ -12,7 +13,8 @@ module.exports = {
 	entry: { main: './src/index.js' },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'main.js'
+		filename: 'main.js',
+		publicPath: ''
 	},
 	module: {
 		rules: [
@@ -99,6 +101,24 @@ module.exports = {
 				}]
 			},
 			canPrint: true
-		})
+		}),
+
+		new CopyWebpackPlugin([{
+				from: './src/fonts',
+				to: './fonts'
+			},
+			{
+				from: './src/favicon',
+				to: './favicon'
+			},
+			{
+				from: './src/images',
+				to: './images'
+			},
+			{
+				from: './src/uploads',
+				to: './uploads'
+			}
+	    ])
 	]
 }

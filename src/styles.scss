@@ -1,6 +1,49 @@
-@import '~bootstrap/scss/bootstrap';
 
-body{
-	background-image: url(./images/background.jpg);
-	background-color: red;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+
+.development{
+
+	text-align: center;
+
+	font-size: 2rem;
+	margin: auto;
+}
+
+header.header{
+	background-color: #aaa;
+}
+
+
+
+ul.mandarin-menu{ 
+
+	width: 100%;
+
+	display: flex;
+
+	justify-content: space-between;
+	// justify-content: center;
+
+	height: 100%;
+
+	padding: 0;	
+
+	margin: 0;
+
+	li:hover{
+
+		color: white;
+		background-color: red;
+	}
+
+	li{
+		padding: 1rem;
+		list-style-type: none;
+	}
 }
