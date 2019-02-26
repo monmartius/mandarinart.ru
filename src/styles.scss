@@ -7,6 +7,10 @@
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
 
+* {
+	outline: 1px solid red;
+}
+
 .development{
 
 	text-align: center;
@@ -48,5 +52,20 @@ ul.mandarinart-menu{
 	li{
 		padding: 1rem;
 		list-style-type: none;
+	}
+}
+
+#slick1 {
+
+	width: 100%;
+
+	img {
+
+		width: 100%;
+	}
+
+	.item{
+
+		background-color: #fff;
 	}
 }
