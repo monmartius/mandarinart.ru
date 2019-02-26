@@ -10,7 +10,7 @@ require('slick-carousel/slick/slick-theme.scss');
 const $ = require('jquery');
 $(document).ready(function(){
 
-    let $slick1 = $('#slick1  .items').slick({
+    let $slick1 = $('#slick1 .items').slick({
         // dots: true,
         // infinite: true,
         // speed: 1500,
@@ -19,5 +19,28 @@ $(document).ready(function(){
         // autoplaySpeed: 3000
 
     });
+
+    let $slick2 = $('#slick2 .items').slick({
+	    // dots: true,
+	    // infinite: true,
+	    // speed: 1500,
+	    slidesToShow: 1,
+	    // autoplay: true,
+	    // autoplaySpeed: 3000
+
+	});
+
+
+    let $slick3 = $('#slick3 .items').slick({
+	    // dots: true,
+	    // infinite: true,
+	    // speed: 1500,
+	    slidesToShow: 1,
+	    // autoplay: true,
+	    // autoplaySpeed: 3000
+
+	});
+
+
 });
 
