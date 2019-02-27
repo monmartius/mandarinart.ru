@@ -3,11 +3,19 @@ import './styles.scss';
 // import "./about.html";
 
 
+
 require('slick-carousel');
 require('slick-carousel/slick/slick.scss');
 require('slick-carousel/slick/slick-theme.scss');
 
-const $ = require('jquery');
+
+let hoverDir = require('hover-dir');
+
+
+
+
+
+
 $(document).ready(function(){
 
     let $slick1 = $('#slick1 .items').slick({
@@ -30,6 +38,8 @@ $(document).ready(function(){
 
 	});
 
+	
+
 
     let $slick3 = $('#slick3 .items').slick({
 	    // dots: true,
@@ -40,6 +50,20 @@ $(document).ready(function(){
 	    // autoplaySpeed: 3000
 
 	});
+
+// hoverDir();
+
+    var elements = document.querySelectorAll('#hovt');
+
+    console.log(elements);
+    
+    // hoverDir(elements);
+    
+    // // or with custom options
+    hoverDir(elements, {
+        speed: 500,
+        hoverElem: 'div'
+    });
 
 
 });
