@@ -3,17 +3,14 @@ import './styles.scss';
 // import "./about.html";
 
 
-
-
-
 require('slick-carousel');
 require('slick-carousel/slick/slick.scss');
 require('slick-carousel/slick/slick-theme.scss');
-
 const $ = require('jquery');
 
 
 let breakPoints = require('./js/breakpoints.js');
+let hoverDir = require('hover-dir');
 
 
 $(document).ready(function(){
@@ -37,6 +34,8 @@ $(document).ready(function(){
 	    // autoplaySpeed: 3000
 
 	});
+
+	
 
 
     let $slick3 = $('#slick3 .items').slick({
@@ -63,4 +62,17 @@ breakPoints.init();
 
 console.log(breakPoints.onPoint());
 
+// hoverDir();
+
+    var elements = document.querySelectorAll('#hovt');
+
+    console.log(elements);
+    
+    // hoverDir(elements);
+    
+    // // or with custom options
+    hoverDir(elements, {
+        speed: 500,
+        hoverElem: 'div'
+    });
 

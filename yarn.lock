@@ -3431,6 +3431,11 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
   integrity sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==
 
+hover-dir@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/hover-dir/-/hover-dir-1.0.1.tgz#5ba7a3c4ea01da17d91deaf810656af5dea3bce9"
+  integrity sha512-V3FdSBzIrHMU3MYl2jgGa3hAGD0Kua2Sg4D7t/W9vibxKqJx1bBMxfOWyQS5ym/udMwL4Z9Xu+vBlSeDugpCfg==
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"

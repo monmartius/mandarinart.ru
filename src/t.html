@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{ outline: 1px solid red;}
+	</style>
+</head>
+<body>
+	<div>
+		asdfasdfadsf
+
+		<div>
+			vvvvvvvvvvv
+		</div>		
+		<div>
+			asdfasdf
+		</div>
+	</div>
+
+	<script src="../node_modules/hover-dir/src/HoverDir.js"></script>
+	<script>
+		
+	    var elements = document.querySelectorAll('div');
+
+	    console.log(elements)
+	    
+	    // hoverDir(elements);
+	    
+	    // or with custom options
+	    hoverDir(elements, {
+	        speed: 500,
+	        hoverElem: 'div'
+	    });
+	</script>
+</body>
+</html>
