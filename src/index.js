@@ -62,3 +62,5 @@ $(document).ready(function(){
 breakPoints.init();
 
 console.log(breakPoints.onPoint());
+
+
