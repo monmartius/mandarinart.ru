@@ -3,11 +3,19 @@ import './styles.scss';
 // import "./about.html";
 
 
+
+
+
 require('slick-carousel');
 require('slick-carousel/slick/slick.scss');
 require('slick-carousel/slick/slick-theme.scss');
 
 const $ = require('jquery');
+
+
+let breakPoints = require('./js/breakpoints.js');
+
+
 $(document).ready(function(){
 
     let $slick1 = $('#slick1 .items').slick({
@@ -19,7 +27,7 @@ $(document).ready(function(){
         // autoplaySpeed: 3000
 
     });
-
+ 
     let $slick2 = $('#slick2 .items').slick({
 	    // dots: true,
 	    // infinite: true,
@@ -40,7 +48,17 @@ $(document).ready(function(){
 	    // autoplaySpeed: 3000
 
 	});
-
-
 });
+ 
 
+// breakPoints.init({
+
+// 	a : 500,
+// 	b : 900,
+// 	c : 1000
+
+// });
+
+breakPoints.init();
+
+console.log(breakPoints.onPoint());
