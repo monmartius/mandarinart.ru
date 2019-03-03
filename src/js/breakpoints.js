@@ -106,8 +106,8 @@ let breakPoints = {
 		settings = arr;
 
 		// arr.push
-		console.log("settings");
-		console.log(settings);
+		// console.log("settings");
+		// console.log(settings);
 
 
 
@@ -118,10 +118,12 @@ let breakPoints = {
 		// }
 
 		settings.unshift({'key' : '-' + settings[0]['key'], 'value' : 0});
-				console.log("settings");
-		console.log(settings);
+		// 		console.log("settings");
+		// console.log(settings);
 
 		this._previousSizeWindow = this.onPoint();
+
+		return $window;
 
 	}, // init : function(parameters){
 
@@ -163,7 +165,7 @@ let breakPoints = {
 
 // console.log('change ' + this._previousSizeWindow + ' => ' + this.sizeWindow);
 
-			$window.trigger('windowChangeSizeStart');
+			$window.trigger('breakPointChangeStart');
 
 			this.previousSizeWindow = this._previousSizeWindow;
 		}
@@ -185,22 +187,23 @@ let breakPoints = {
 
 
 
-$window.on('windowChangeSizeStart', function(){
+$window.on('breakPointChangeStart', function(){
 
-	if (!this.windowChangeSizeStartTrigger){
+	if (!this.breakPointChangeStartTrigger){
 
 		// $.vp.__previousSizeWindow = $.vp._previousSizeWindow;
 
-		this.windowChangeSizeStartTrigger = true;
+		this.breakPointChangeStartTrigger = true;
 
 		setTimeout(function(){
 
-			this.windowChangeSizeStartTrigger = false;
+			this.breakPointChangeStartTrigger = false;
 
-// console.log('windowChangeSizeStart finished');
+// console.log('breakPointChangeStart finished');
 			// $.vp._previousSizeWindow = $.vp.__previousSizeWindow;
 
-			$window.trigger('windowChangeSize');
+			$window.trigger('breakPointChange');
+
 			
 		}, 1000);
 	}
@@ -210,7 +213,7 @@ $window.on('windowChangeSizeStart', function(){
 	}
 
 // console.log('trigger ' + this._previousSizeWindow + ' ' + this.sizeWindow);
-// console.log('$.vp.windowChangeSizeStartTrigger ' + this.windowChangeSizeStartTrigger);
+// console.log('$.vp.breakPointChangeStartTrigger ' + this.breakPointChangeStartTrigger);
 
 // alert('trigger ' + $.vp._previousSizeWindow + ' ' + $.vp.sizeWindow);	
 });
@@ -220,10 +223,7 @@ $window.on('windowChangeSizeStart', function(){
 
 
 $window.on('resize', function(){
-
-	console.log('resize ' + $window.width());
-	console.log(breakPoints.onPoint());
-
+	breakPoints.onPoint()
 });
 
 
@@ -231,10 +231,3 @@ $window.on('resize', function(){
 
 
 module.exports = breakPoints;
-
-
-
-
-// vp.size
-// vp.init();
-// vp.defaultSetting();

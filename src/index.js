@@ -1,6 +1,7 @@
 // import "./bootstrap/bootstrap.js";
 import './styles.scss';
 // import "./about.html";
+import 'bootstrap';
 
 
 require('slick-carousel');
@@ -47,6 +48,32 @@ $(document).ready(function(){
 	    // autoplaySpeed: 3000
 
 	});
+
+
+
+
+
+breakPoints.init();
+
+// console.log(breakPoints.onPoint());
+
+// hoverDir();
+
+var elements = document.querySelectorAll('#hovt');
+
+
+hoverDir(elements, {
+    speed: 500,
+    hoverElem: 'div'
+});
+
+
+
+
+
+
+
+
 });
  
 
@@ -57,22 +84,4 @@ $(document).ready(function(){
 // 	c : 1000
 
 // });
-
-breakPoints.init();
-
-console.log(breakPoints.onPoint());
-
-// hoverDir();
-
-    var elements = document.querySelectorAll('#hovt');
-
-    console.log(elements);
-    
-    // hoverDir(elements);
-    
-    // // or with custom options
-    hoverDir(elements, {
-        speed: 500,
-        hoverElem: 'div'
-    });
 
