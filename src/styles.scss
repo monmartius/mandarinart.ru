@@ -42,11 +42,32 @@ $menu-hover : red;
 	z-index: 10000;
 }
 
+
+
+
+
+
+
+
+@media (max-width: $break-point-md - 1){
+
+	.container{
+
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+
  header.header {
 
 	background-color: black;
 	position: relative;
  }
+
+
+
+
 
  header.header {
 
@@ -64,6 +85,24 @@ $menu-hover : red;
 	}
 
 	color: #fff;
+
+	// #mandarinart-menu-toggle{
+
+	// 	display: none;
+	// }
+
+	// #mandarinart-menu-toggle:checked~ul.mandarinart-menu{
+		
+	// 	display: none;
+	// }
+
+	// #mandarinart-menu-toggle~label:before{
+	// 	content: "CLOSE MENU";
+	// }
+
+	// #mandarinart-menu-toggle:checked~label:before{
+	// 	content: "OPEN MENU";
+	// }
 	
 	@media (min-width: $break-point-sm){
 
@@ -93,8 +132,6 @@ $menu-hover : red;
 				padding-bottom: .35rem;
 				padding-left: 1.1rem;
 				font-size: .8rem;
-
-
 			}
     	}
 
@@ -107,9 +144,7 @@ $menu-hover : red;
 	 		p{
 				margin-bottom: .2rem;
 	 		}
-
     	}
-
 
 	 	.logo-block{
 	 		top: 1.9rem;
@@ -118,14 +153,13 @@ $menu-hover : red;
 	 	}
 
 	 	.mandarinart-menu{
-
+	 		background-color: black;
+			display: flex;
 	 		top: 0;
-	 		left: 33.4%;
-	 		width: 66.55%;
+	 		right: 0;
+	 		width: 7rem;
 			font-size: 1rem;
 	 	}
-
-		
     }
 
 	
@@ -179,8 +213,12 @@ $menu-hover : red;
 	 		width: 33.3333333%;
 	 	}
 
+
+
+
 	 	.mandarinart-menu{
 
+	 		display: flex;
 	 		top: 3rem;
 	 		left: 0;
 	 		width: 100%;

@@ -1,0 +1,1 @@
+ren slider*.png small-slider*.png

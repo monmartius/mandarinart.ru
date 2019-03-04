@@ -53,19 +53,19 @@ $(document).ready(function(){
 
 
 
-breakPoints.init();
+    breakPoints.init();
 
-// console.log(breakPoints.onPoint());
+    // console.log(breakPoints.onPoint());
 
-// hoverDir();
+    // hoverDir();
 
-var elements = document.querySelectorAll('#hovt');
+    var elements = document.querySelectorAll('#hovt');
 
 
-hoverDir(elements, {
-    speed: 500,
-    hoverElem: 'div'
-});
+    hoverDir(elements, {
+        speed: 500,
+        hoverElem: 'div'
+    });
 
 
 
