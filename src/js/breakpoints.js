@@ -1,5 +1,6 @@
 
 
+
 function decomposeObject(object){ // {a: 1} => {'key': 'a', 'value': 1}
 
 	var key, value, result = {};
