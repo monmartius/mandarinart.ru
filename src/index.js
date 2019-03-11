@@ -63,7 +63,6 @@ $(document).ready(function(){
 
     let $body = $('body');
 
-    $body.css('height', '400px');
 
     // let w = $body.width();
 
@@ -74,21 +73,6 @@ $(document).ready(function(){
     // alert(w);
 
 
-
-    function hasVerticalScroll(node) {
-      if ( node == undefined ) {
-        if ( window.innerHeight )
-          return document.body.offsetHeight > innerHeight;
-        else
-          return document.documentElement.scrollHeight >
-              document.documentElement.offsetHeight ||
-              document.body.scrollHeight > document.body.offsetHeight;
-      }
-      else { return node.scrollHeight > node.offsetHeight; }
-    }
-
-    // Пример (если не передать параметр node — то проверит у body)
-    hasVerticalScroll();
 
 
 
@@ -109,7 +93,7 @@ $(document).ready(function(){
         //     alert('огого'); 
         // } 
 
-        $windowState = $window.width() + 'px <br>' + breakPoints.onPoint()['size']+ ' <br>';
+        $windowState = $window.width() + 'px <br>' + breakPoints.onPoint() + ' <br>';
         $windowState += ($window.width() + 18) + 'px <br>';
         // $windowState += '<br>' + height_document + '<br>' + height_client;
         $windowState += '<br> window.innerWidth ' + window.innerWidth ;
@@ -119,43 +103,16 @@ $(document).ready(function(){
         // $display.html("sdsfdg");
     });
 
-    // console.log(breakPoints.onPoint());
+    let $menuToggle = $('#menu-toggle');
 
-    // hoverDir();
+    let $menu = $('ul.menu');
 
-    // var elements = document.querySelectorAll('#hovt');
+    $menuToggle.on('click', function(){
 
+        $menuToggle.toggleClass('active');
+		$menu.slideToggle();        
+    });
 
-    // hoverDir(elements, {
-    //     speed: 500,
-    //     hoverElem: 'div'
-    // });
-
-
-
-    // $window.on('breakPointChange', function(){
-
-    //     alert(breakPoints.onPoint()['size']);
-    // })
-
-
-
-    // var height_document = $(document).height(); 
-    // var height_client = document.body.clientHeight; 
-     
-    // if(height_document > height_client) { 
-    //     alert('огого'); 
-    // } 
 
 
 });
- 
-
-// breakPoints.init({
-
-// 	a : 500,
-// 	b : 900,
-// 	c : 1000
-
-// });
-

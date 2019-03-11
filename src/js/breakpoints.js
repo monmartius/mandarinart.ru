@@ -50,20 +50,21 @@ var	settings = {
 		'xl' : 1200
 	};
 
+// console.log(settingsArr);
+
 // breackPoints.size => '-sm', 'sm', 'md' ... 'xl'
 
 	settings = objectToArray(settings);
 
 let breakPoints = {
 
-	scrollTop : $window.scrollTop(),
+	// scrollTop : $window.scrollTop(),
 	sizeWindow : '',
 	previousSizeWindow : undefined,
 	_previousSizeWindow : undefined,
 
 
 	init (parameters){
-
 
 		if(parameters){
 
@@ -118,7 +119,7 @@ let breakPoints = {
 		// 	settings = 
 		// }
 
-		settings.unshift({'key' : '-' + settings[0]['key'], 'value' : 0});
+		settings.unshift({'key' : '-' + settings[0]['key'], 'value' : 1});
 		// 		console.log("settings");
 		// console.log(settings);
 
@@ -136,15 +137,42 @@ let breakPoints = {
 
 // console.log(settings);
 
-		for( var i = settings.length - 1; i >= 0; i--){
 
+//window.matchMedia("screen and (min-width: 1px) and (max-width:600px)").matches
+
+
+
+
+
+		for( var i = 0 ; i < settings.length; i++){
+
+// console.log(i);
 // console.log('i=' + i);
 
 // console.log('width = ' + width );
 // console.log("settings[i]['value'] = " + settings[i]['value'] );
 
+			let size1condition = "(min-width:" + settings[i]['value'] + "px)";
+			let size2condition = 0;
+	
+			if(i === settings.length - 1){
+			
+				size2condition = "";
+				// " and (max-width:" + size2 + "px)"
+			}
+			else{
+				size2condition = " and (max-width:" + (settings[i+1]['value'] - 1) + "px)"
+			}
 
-			if( width >= settings[i]['value'] ){
+			let condition = size1condition + size2condition;
+		
+
+// console.log(condition);
+// console.log(i === settings.length - 1);
+
+			if(window.matchMedia(condition).matches){
+
+// console.log('break');
 
 				break;
 			}
@@ -175,7 +203,7 @@ let breakPoints = {
 
 // console.log('change ' + this._previousSizeWindow + ' => ' + this.sizeWindow);
 		
-		return {width, size};
+		return size;
 	}, // size = function(){
 
 	// onPoint : this.size

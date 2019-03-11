@@ -23,14 +23,15 @@
 
 
 * {
-	//outline: 1px solid red;
-	font-family: 'Roboto', sans-serif;
+//outline: 1px solid red;
+font-family: 'Roboto', sans-serif;
 }
 
 body {
 
 	background-color: #D0DCE8;
-	// padding-top: 7.8rem;
+// padding-top: 7.8rem;
+// background-image: url('images/opened.svg');
 }
 
 
@@ -39,7 +40,9 @@ $break-point-md : 768px;
 $break-point-lg : 992px;
 $break-point-xl : 1200px;
 
-$menu-hover : red;
+$menu-hover : #00a0e3;
+
+$color: #00a0e3;
 
 // .header-wrapper{
 
@@ -52,14 +55,43 @@ $menu-hover : red;
 // }
 
 
-	// body{
-	// 			overflow: hidden;
-	// }
+// body{
+// 			overflow: hidden;
+// }
 
 
 
- header.header {
 
+body:before{
+
+	width: 100%;
+	content: " ";
+	display: table;
+
+	@media (min-width: 1px) and (max-width: $break-point-md - 1){
+
+		height: 3rem;
+	}
+	@media (min-width: $break-point-md){
+		height: 4.9rem;
+
+	}
+	@media (min-width: $break-point-lg){
+		height: 7rem;
+	}
+
+	@media (max-width: $break-point-sm - 1) {
+		height: 3rem;
+	}	
+}
+
+.info-block-mobile{
+
+	display: none;
+}
+
+
+header.header {
 
 	background-color: black;
 	position: relative;
@@ -67,223 +99,319 @@ $menu-hover : red;
 	left: 0;
 	width: 100%;
 	z-index: 10000;
-	position: relative;
- }
+	position: fixed;
 
- .menu.container,
- .logo-info-slogan.container{
+	.menu.container,
+	.logo-info-slogan.container{
 
- 	position: relative;
- }
+		position: relative;
+	}
 
-
-
-
-
- header.header {
-
- 	.logo-block, 
- 	.info-block,
- 	.slogan-block,
- 	.mandarinart-menu{
+	.logo-block, 
+	.info-block,
+	.slogan-block,
+	.mandarinart-menu{
 		position: absolute;
- 	}
+	}
 
- 	.logo-block{
- 		.logo-img{
+	.logo-block{
+		.logo-img{
 			width: 95%;
 		}
 	}
 
 	color: #fff;
 
-	// #mandarinart-menu-toggle{
-
-	// 	display: none;
-	// }
-
-	// #mandarinart-menu-toggle:checked~ul.mandarinart-menu{
-		
-	// 	display: none;
-	// }
-
-	// #mandarinart-menu-toggle~label:before{
-	// 	content: "CLOSE MENU";
-	// }
-
-	// #mandarinart-menu-toggle:checked~label:before{
-	// 	content: "OPEN MENU";
-	// }
-	
-	@media (min-width: $break-point-sm){
-
-    	height: 5rem;
-
-    	.slogan-block{
-
-    		display: none;
-			
-	 		top: 3.5rem;
-	 		left: 66.8%;
-	 		width: 33.2%;
-	 		height: 4.3rem;
+	ul.menu{
+		text-transform: uppercase;
+	}
 
 
-	 		&:before{
-				content: "\00ab";
+	@media (min-width: 1px) and (max-width: $break-point-md - 1){
+
+		height: 3rem;
+		width: 100%;
+		background-color: black;	   	
+
+		.menu.container{
+
+			width: 100%;
+			max-width: 100%;
+			max-width: 100%;
+			position: relative;
+
+
+			#menu-toggle{
+
 				position: absolute;
-				font-size: 1.8rem;
-				bottom: 1rem;
+				top: .4rem;
+				right: .5rem;
+				height: 3rem;
+				width: 2.5rem;
+				z-index: 100;
+				background-image: url('images/closed.svg');
+				background-size: 2.5rem 2.5rem;
 			}
-			
-			p{
+
+			#menu-toggle.active{
+
+				background-image: url('images/opened.svg');
+				background-size: 2.5rem 2.5rem;		   		
+			}
+
+			ul.menu{
+
+				display: none;
+				padding: 0;
+				margin-left: auto;
+				background-color: black;
 				position: absolute;
-				bottom: 0;
-				margin: 0;
-				padding-bottom: .35rem;
-				padding-left: 1.1rem;
-				font-size: .8rem;
-			}
-    	}
+				z-index: 99;
+				top:3rem;
+				right: 0;
 
-    	.info-block{
-    		padding-top: .7rem;
-	 		top: 0;
-	 		left: 0;
-	 		width: 80%;
-	 		font-size: .8rem;
-	 		p{
-				margin-bottom: .2rem;
-	 		}
-    	}
+				li{
 
-	 	.logo-block{
-	 		top: 1.9rem;
-	 		left: 33.4%;
-	 		width: 50%;
-	 	}
+					list-style: none;
+					display: block;
+					width: 15rem;
+					text-align: right;
 
-	 	.mandarinart-menu{
-	 		background-color: black;
-			display: flex;
-	 		top: 0;
-	 		right: 0;
-	 		width: 7rem;
-			font-size: 1rem;
-	 	}
-    }
+					// &:last-child > a{
 
-	
-	@media (min-width: $break-point-md){
-	
-    	height: 4.8rem;
+					// }
 
-    	.slogan-block{
-			
-			display: none;
-	 		top: 3.5rem;
-	 		left: 66.8%;
-	 		width: 33.2%;
-	 		height: 4.3rem;
-
-	 		&:before{
-				content: "\00ab";
-				position: absolute;
-				font-size: 1.8rem;
-				bottom: 1rem;
-			}
-			
-			p{
-				position: absolute;
-				bottom: 0;
-				margin: 0;
-				padding-bottom: .35rem;
-				padding-left: 1.1rem;
-				font-size: .8rem;
-			}
-    	}
-
-    	.info-block{
-    		padding-top: 1.39rem;
-	 		top: 0;
-	 		left: 33.4%;
-	 		width: 66.8%;
-	 		font-size: .8rem;
-	 		display: flex;
-	 		justify-content: space-between;
-
-	 		p{
-	 			display: inline-block;
-	 		}
-
-    	}//
-
-	 	.logo-block{
-	 		top: 0rem;
-	 		left: 0;
-	 		width: 33.3333333%;
-	 	}
-
-
-
-
-	 	.mandarinart-menu{
-
-	 		display: flex;
-	 		top: 3rem;
-	 		left: 0;
-	 		width: 100%;
-			font-size: .9rem;
-
-			& li{
-
-				padding-top: 0;
-
-				
-				list-style-type: none;
-				position: relative;
-
-				&:hover:after {
-					position: absolute;
-					top: 1.2rem;
-					left: 0;
-					content: " ";
-					width: 100%;
-					height: .2rem;
-					background-color: $menu-hover;
-				}
-
-				a {
-					color: inherit;
-
-					&:hover{
+					a{
+						display: block;
+						margin-left: auto;
+						padding: .4rem;
+						padding-right: 1rem;
+						color: inherit;
+						width: 100%;
 						text-decoration: none;
+	
+						&:hover{
+
+
+							color: black;
+							background-color: $menu-hover; 
+						}
 					}
 				}
 			}
+
+			ul.menu.active{
+				display: block;
+			}
+
+
 		}
-    }
+
+	.logo-info-slogan.container{
+
+		width: 100%;
+		max-width: 100%;
+	}
+
+		.slogan-block{
+
+			display: none;
+
+			&:before{
+				content: "\00ab";
+
+			}
+
+			p{
+
+			}
+		}
+
+		.info-block{
+
+			position: absolute;
+			left: 16rem;
+			top: .3rem;
+			width: 50%;
+			line-height: 1rem;
+			padding-top: .2rem;
+			p{
+				font-size: .7rem;
+				margin: 0;
+				padding: 0;
+				// background-color: blue;
+			}
+			p:nth-child(2), p:nth-child(3){
+
+				display: inline-block;
+				font-weight: bold;
+			}
+			p:nth-child(2):after{
+				content: ","
+			}
+		}
+
+		.logo-block{
+			
+			padding-left: 1rem;
+			position: absolute;
+			left: 0;
+			top: .3rem;
+			width: 14.8rem;
+		}
+
+	}
+
+
+
+	@media (max-width: $break-point-sm - 1) {
+
+			.logo-block{
+				
+				display: block;
+				margin: 0 auto 0 auto;
+				text-align: center;
+
+				// padding-left: 1rem;
+				// position: absolute;
+				padding: 0;
+			
+				// top: .3rem;
+
+				// width: 14.8rem;
+				width: 100%;
+
+				img.logo-img{
+					
+					width: 14rem;
+				}
+			}
+
+
+			.info-block{
+
+				display: none;
+			}
+
+
+	}
+
+	@media (min-width: $break-point-md){
+
+		height: 4.9rem;
+
+		.slogan-block{
+
+			display: none;
+			top: 3.5rem;
+			left: 66.8%;
+			width: 33.2%;
+			height: 4.3rem;
+
+			&:before{
+				content: "\00ab";
+				position: absolute;
+				font-size: 1.8rem;
+				bottom: 1rem;
+			}
+
+			p{
+				position: absolute;
+				bottom: 0;
+				margin: 0;
+				padding-bottom: .35rem;
+				padding-left: 1.1rem;
+				font-size: .8rem;
+			}
+		}
+
+		.info-block{
+			padding-top: 1.39rem;
+			top: .2rem;
+			left: 33.4%;
+			width: 66.8%;
+			font-size: .8rem;
+			display: flex;
+			justify-content: space-between;
+
+			p{
+				display: inline-block;
+			}
+
+			p:first-child{
+				padding-left: 1rem;
+			}
+
+	}//
+
+	.logo-block{
+		top: .3rem;
+		left: 0;
+		width: 33.3333333%;
+	}
+
+
+
+
+	ul.menu{
+
+		display: flex!important;
+		position: absolute;
+		top: 3.2rem;
+		left: 0;
+		width: 100%;
+		font-size: .9rem;
+		justify-content: space-between;
+		padding: 0;	
+		margin: 0;
+
+		& li{
+
+			padding-top: 0;
+			list-style-type: none;
+			position: relative;
+
+			&:hover:after {
+				position: absolute;
+				top: 1.2rem;
+				left: 0;
+				content: " ";
+				width: 100%;
+				height: .2rem;
+				background-color: $menu-hover; //#03c4eb
+			}
+
+			a {
+				color: inherit;
+
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	}
 
 
 	@media (min-width: $break-point-lg){
 
-    	height: 7rem;
+		height: 7rem;
 
-    	.slogan-block{
+		.slogan-block{
 
 			display: block;
-	 		top: 2.7rem;
-	 		left: 66.8%;
-	 		width: 33.2%;
-	 		height: 4rem;
+			top: 2.65rem;
+			left: 66.8%;
+			width: 33.2%;
+			height: 4rem;
 
-	 		&:before{
+			&:before{
 				content: "\00ab";
 				position: absolute;
 				font-size: 1.8rem;
 				bottom: 1rem;
 			}
-			
+
 			p{
 				position: absolute;
 				bottom: 0;
@@ -294,37 +422,44 @@ $menu-hover : red;
 
 
 			}
-    	}
 
-    	.info-block{
-    		padding-top: .8rem;
-	 		top: 0;
-	 		left: 0;
-	 		width: 33.3333333%;
-		
-	 		font-size: .9rem;
-	 		display: block;
-
-	 		p{
-	 			display: block;
-	 			margin: 0;
-	 		}
 
 		}
 
-	 	.logo-block{
-	 		top: 3rem;
-	 		left: 33.4%;
-	 		width: 33.3333333%;
-	 	}
+		.info-block{
+			padding-top: .8rem;
+			top: 0;
+			left: 0;
+			width: 33.3333333%;
+
+			font-size: .9rem;
+			display: block;
+
+			p{
+				display: block;
+				margin: 0;
+				padding-left: 0;
+			}
+
+			p:first-child{
+				padding-left: 0;
+			}
+
+		}
+
+		.logo-block{
+			top: 3rem;
+			left: 33.4%;
+			width: 33.3333333%;
+		}
 
 
 
-	 	.mandarinart-menu{
+		ul.menu{
 
-	 		top: 0;
-	 		left: 33.4%;
-	 		width: 66.55%;
+			top: 0;
+			left: 33.4%;
+			width: 66.55%;
 			font-size: .95rem;
 
 
@@ -332,7 +467,7 @@ $menu-hover : red;
 
 				padding-top: 1rem;
 
-				
+
 				list-style-type: none;
 				position: relative;
 
@@ -356,36 +491,28 @@ $menu-hover : red;
 			}
 		}
 
-
-	 	.mandarinart-menu{
-
+	}
 
 
-	 	}
+	@media (min-width: $break-point-xl){
 
+		height: 7rem;
 
-
-    }
-
-
-    @media (min-width: $break-point-xl){
-
-    	height: 7rem;
-    	.slogan-block{
+		.slogan-block{
 
 			display: block;
-	 		top: 2.8rem;
-	 		left: 66.8%;
-	 		width: 33.2%;
-	 		height: 4rem;
+			top: 2.8rem;
+			left: 66.8%;
+			width: 33.2%;
+			height: 4rem;
 
-	 		&:before{
+			&:before{
 				content: "\00ab";
 				position: absolute;
 				font-size: 2rem;
 				bottom: 1rem;
 			}
-			
+
 			p{
 				position: absolute;
 				bottom: 0;
@@ -393,76 +520,49 @@ $menu-hover : red;
 				padding-bottom: .35rem;
 				padding-left: 1.1rem;
 				font-size: .9rem;
-
-
 			}
-    	}
+		}
 
-    	.info-block{
-    		padding-top: .7rem;
-	 		top: 0;
-	 		left: 0;
-	 		width: 33.3333333%;
-
-    	}
-
-	 	.logo-block{
-	 		top: 2.8rem;
-	 		left: 33.4%;
-	 		width: 33.3333333%;
-	 	}
-
-	 	.mandarinart-menu{
-
-	 		top: 0;
-	 		left: 33.4%;
-	 		width: 66.55%;
-
-	 	}
-    }
-}
-
-
-
-
-ul.mandarinart-menu{ 
-
-	text-transform: uppercase;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	padding: 0;	
-	margin: 0;
-
-	
-
-	li {
-		padding-top: .8rem;
-		list-style-type: none;
-		position: relative;
-
-		&:hover:after {
-			position: absolute;
-			top: 2rem;
+		.info-block{
+			padding-top: .7rem;
+			top: 0;
 			left: 0;
-			content: " ";
-			width: 100%;
-			height: .2rem;
-			background-color: $menu-hover;
+			width: 33.3333333%;
 		}
 
-		a {
-			color: inherit;
-
-			&:hover{
-				text-decoration: none;
-			}
+		.logo-block{
+			top: 2.8rem;
+			left: 33.4%;
+			width: 33.3333333%;
 		}
-		
+
+
 	}
 
-
 }
+
+
+@media (max-width: $break-point-sm - 1){
+	
+	.info-block-mobile{
+		
+		padding-top: .4rem;
+		padding-bottom: .4rem;
+		display: block;
+		font-size: .9rem;
+		font-weight: bold;
+
+		text-align: center;
+		background-color: black;
+		color: $color;
+
+		p{
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
 
 #slick1, #slick2 {
 
