@@ -3,7 +3,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i');
 
-
 .development{
 
 	text-align: center;
@@ -27,13 +26,20 @@
 font-family: 'Roboto', sans-serif;
 }
 
-body {
 
+
+body {
+	
+	overflow-x: hidden;
 	background-color: #D0DCE8;
 // padding-top: 7.8rem;
 // background-image: url('images/opened.svg');
 }
 
+// section{
+
+// 	overflow-x: hidden;
+// }
 
 $break-point-sm : 576px;
 $break-point-md : 768px;
